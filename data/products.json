@@ -1,0 +1,200 @@
+[
+    {
+        "id": "elec-001",
+        "name": "Ultra HD Smart TV 55\"",
+        "category": "Electronics",
+        "subcategory": "TV",
+        "description": "Experience breathtaking visuals with this 55-inch 4K Ultra HD Smart TV. Features HDR10+, Dolby Atmos, built-in streaming apps, and a sleek bezel-less design.",
+        "price": 42999,
+        "image": "/products/tv-55.jpg"
+    },
+    {
+        "id": "elec-002",
+        "name": "LED Smart TV 43\"",
+        "category": "Electronics",
+        "subcategory": "TV",
+        "description": "Compact yet powerful 43-inch LED Smart TV with vibrant colors, Wi-Fi connectivity, and access to all major streaming platforms.",
+        "price": 28999,
+        "image": "/products/tv-43.jpg"
+    },
+    {
+        "id": "elec-003",
+        "name": "OLED TV 65\" Premium",
+        "category": "Electronics",
+        "subcategory": "TV",
+        "description": "The pinnacle of display technology. 65-inch OLED with perfect blacks, infinite contrast ratio, and cinema-grade color accuracy.",
+        "price": 89999,
+        "image": "/products/tv-65.jpg"
+    },
+    {
+        "id": "elec-004",
+        "name": "Soundbar Pro 2.1",
+        "category": "Electronics",
+        "subcategory": "Accessories",
+        "description": "Immersive 2.1 channel soundbar with wireless subwoofer. Bluetooth 5.0, HDMI ARC, and crystal-clear dialogue enhancement.",
+        "price": 8999,
+        "image": "/products/soundbar.jpg"
+    },
+    {
+        "id": "elec-005",
+        "name": "Universal TV Mount",
+        "category": "Electronics",
+        "subcategory": "Accessories",
+        "description": "Heavy-duty tilting wall mount compatible with 32-70 inch TVs. Easy installation with all hardware included.",
+        "price": 2499,
+        "image": "/products/tv-mount.svg"
+    },
+    {
+        "id": "elec-006",
+        "name": "Streaming Media Player",
+        "category": "Electronics",
+        "subcategory": "Accessories",
+        "description": "Turn any TV into a smart TV. 4K streaming, voice control, and access to thousands of apps and channels.",
+        "price": 3999,
+        "image": "/products/streaming-player.svg"
+    },
+    {
+        "id": "furn-001",
+        "name": "Premium L-Shape Sofa",
+        "category": "Furniture",
+        "subcategory": "Sofa",
+        "description": "Luxurious L-shaped sofa with high-density foam cushions, premium fabric upholstery, and sturdy hardwood frame. Seats 5-6 comfortably.",
+        "price": 45999,
+        "image": "/products/sofa-l.jpg"
+    },
+    {
+        "id": "furn-002",
+        "name": "3-Seater Velvet Sofa",
+        "category": "Furniture",
+        "subcategory": "Sofa",
+        "description": "Elegant 3-seater sofa in rich velvet fabric. Features pillow-back design, tapered wooden legs, and removable cushion covers.",
+        "price": 32999,
+        "image": "/products/sofa-3seat.jpg"
+    },
+    {
+        "id": "furn-003",
+        "name": "Executive Office Bureau",
+        "category": "Furniture",
+        "subcategory": "Bureau",
+        "description": "Sophisticated office bureau with 5 drawers, cable management system, and genuine wood veneer finish. Perfect for home offices.",
+        "price": 24999,
+        "image": "/products/bureau.svg"
+    },
+    {
+        "id": "furn-004",
+        "name": "Classic Writing Bureau",
+        "category": "Furniture",
+        "subcategory": "Bureau",
+        "description": "Traditional writing bureau with drop-down desk, multiple compartments, and antique brass hardware. Adds elegance to any room.",
+        "price": 18999,
+        "image": "/products/writing-bureau.svg"
+    },
+    {
+        "id": "furn-005",
+        "name": "Modern Wardrobe Cupboard",
+        "category": "Furniture",
+        "subcategory": "Cupboard",
+        "description": "Spacious 3-door wardrobe with mirror panel, adjustable shelves, hanging rail, and soft-close hinges. Available in walnut finish.",
+        "price": 35999,
+        "image": "/products/cupboard-wardrobe.svg"
+    },
+    {
+        "id": "furn-006",
+        "name": "Kitchen Storage Cupboard",
+        "category": "Furniture",
+        "subcategory": "Cupboard",
+        "description": "Multi-purpose kitchen cupboard with 4 shelves, 2 drawers, and moisture-resistant laminate finish. Maximizes kitchen storage.",
+        "price": 15999,
+        "image": "/products/cupboard-kitchen.svg"
+    },
+    {
+        "id": "furn-007",
+        "name": "Solid Wood Panel Door",
+        "category": "Furniture",
+        "subcategory": "Doors",
+        "description": "Premium solid wood panel door with rich grain texture. Pre-finished with weather-resistant sealant. Standard size 80x36 inches.",
+        "price": 12999,
+        "image": "/products/door-wood.svg"
+    },
+    {
+        "id": "furn-008",
+        "name": "Modern Flush Door",
+        "category": "Furniture",
+        "subcategory": "Doors",
+        "description": "Sleek flush door with smooth laminate finish. Lightweight yet durable construction. Ideal for interior use.",
+        "price": 7999,
+        "image": "/products/door-flush.svg"
+    },
+    {
+        "id": "furn-009",
+        "name": "UPVC Sliding Window",
+        "category": "Furniture",
+        "subcategory": "Windows",
+        "description": "Energy-efficient UPVC sliding window with double glazing, multi-point locking system, and weather seals. Size: 4x4 feet.",
+        "price": 8999,
+        "image": "/products/window-upvc.svg"
+    },
+    {
+        "id": "furn-010",
+        "name": "French Window Set",
+        "category": "Furniture",
+        "subcategory": "Windows",
+        "description": "Elegant French window set with tempered glass panels, decorative grilles, and smooth opening mechanism. Brings natural light indoors.",
+        "price": 14999,
+        "image": "/products/window-french.svg"
+    },
+    {
+        "id": "clean-001",
+        "name": "Premium Floor Cleaner",
+        "category": "Cleaning",
+        "subcategory": "Liquids",
+        "description": "Professional-grade floor cleaning liquid with long-lasting fragrance. Effective on marble, tiles, and wooden floors. 1 Liter bottle.",
+        "price": 299,
+        "image": "/products/floor-cleaner.svg"
+    },
+    {
+        "id": "clean-002",
+        "name": "Multi-Surface Cleaning Spray",
+        "category": "Cleaning",
+        "subcategory": "Liquids",
+        "description": "All-purpose cleaning spray for glass, countertops, appliances, and more. Streak-free shine with antibacterial formula. 500ml.",
+        "price": 199,
+        "image": "/products/cleaning-spray.svg"
+    },
+    {
+        "id": "clean-003",
+        "name": "Antibacterial Hand Soap",
+        "category": "Cleaning",
+        "subcategory": "Soap",
+        "description": "Gentle yet effective liquid hand soap with moisturizing formula. Kills 99.9% germs while keeping hands soft. Available in lavender scent.",
+        "price": 149,
+        "image": "/products/hand-soap.svg"
+    },
+    {
+        "id": "clean-004",
+        "name": "Dish Wash Soap Bar",
+        "category": "Cleaning",
+        "subcategory": "Soap",
+        "description": "Extra-strength dish washing soap bar that cuts through grease effortlessly. Long-lasting and gentle on hands. Pack of 3.",
+        "price": 99,
+        "image": "/products/dish-soap.svg"
+    },
+    {
+        "id": "clean-005",
+        "name": "Furniture Polish Oil",
+        "category": "Cleaning",
+        "subcategory": "Oil",
+        "description": "Premium furniture polish oil that restores wood's natural shine. Protects against scratches and UV damage. Pleasant cedarwood scent.",
+        "price": 349,
+        "image": "/products/furniture-oil.svg"
+    },
+    {
+        "id": "clean-006",
+        "name": "Multi-Purpose Cleaning Oil",
+        "category": "Cleaning",
+        "subcategory": "Oil",
+        "description": "Versatile cleaning oil for stainless steel, leather, and wood surfaces. Removes stains and adds protective coating. 500ml bottle.",
+        "price": 249,
+        "image": "/products/cleaning-oil.svg"
+    }
+]
