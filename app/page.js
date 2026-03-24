@@ -633,7 +633,7 @@ export default function Home() {
                             <MessageCircle
                               size={22}
                               strokeWidth={2.1}
-                              className="  hover:scale-110 hover:text-[var(--demo)]"
+                              className="  hover:scale-110 hover:text-[var(--demo)]" 
                             />
                           </button>
                           <button
