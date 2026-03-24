@@ -99,10 +99,10 @@ export default function Navbar() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed right-4 top-[76px] z-50 w-[180px] md:hidden"
+            className="fixed right-3 top-[70px] z-50 w-[150px]  md:hidden"
             style={{ transformOrigin: "top right" }}
           >
-            <div className="overflow-hidden rounded-[16px] border border-[#f0e6d2] bg-[#fdf8f0]/20 p-2 shadow-[0_8px_30px_rgba(138,33,50,0.12)] backdrop-blur-md">
+            <div className="overflow-hidden rounded-[16px] border border-[var(--border)] bg-[white]/20 p-2 shadow-[0_8px_30px_rgba(138,33,50,0.12)] backdrop-blur-md">
               <div className="flex flex-col">
                 {navLinks.map((link, index) => (
                   <motion.div
@@ -114,8 +114,8 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={closeMobileMenu}
-                      className="group flex w-full items-center justify-between rounded-lg px-4 py-3 text-[15px] transition-colors hover:bg-[var(--primary)]/10"
-                      style={{ color: "var(--primary)","padding":"10px 10px","fontWeight":"800" }}
+                      className="group flex w-full items-center justify-between  px-4 py-3 text-[15px] transition-colors hover:bg-[var(--primary)]/30 "
+                      style={{ color: "var(--primary)","padding":"10px 10px","fontWeight":"800","hover:text-color":"white/90" }}
                     >
                       <span className="font-bold tracking-wide">{link.label}</span>
                       <span className="text-[15px] opacity-100 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">

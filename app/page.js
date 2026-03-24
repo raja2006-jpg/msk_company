@@ -416,7 +416,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true, margin: "-60px" }}
               >
-                <Link href={`/products/${product.id}`} className="block group">
+                <div className="block group cursor-default">
                   <div className="relative overflow-hidden rounded-[20px] bg-[#111827] shadow-[0_18px_45px_rgba(15,23,42,0.16)] transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_28px_60px_rgba(15,23,42,0.22)]">
                     <div className="relative aspect-[0.88] overflow-hidden bg-gray-100">
                       <Image
@@ -455,7 +455,7 @@ export default function Home() {
                      
                     </div>
                   </div>
-                </Link>
+               </div>
               </motion.div>
             ))}
           </div>
@@ -493,7 +493,7 @@ export default function Home() {
         <div className="container-custom relative z-10">
           <AnimatedSection className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
             <motion.div variants={fadeInUp} className="max-w-xl">
-              <span className="inline-flex rounded-[5px]   px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--primary)] shadow-[0_12px_24px_rgba(188,144,71,0.08)] backdrop-blur-sm">
+              <span className="inline-flex rounded-[5px]   px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--primary)] shadow-[0_12px_24px_rgba(188,144,71,0.08)] backdrop-blur-sm" style={{"margin-left":"10px"}}>
                 Explore From Instagram
               </span>
 
@@ -516,7 +516,7 @@ export default function Home() {
                   target={hasInstagramLink ? "_blank" : undefined}
                   rel={hasInstagramLink ? "noopener noreferrer" : undefined}
                   className="inline-flex items-center gap-3 rounded-[7px] bg-gradient-to-r from-[#9d35ff] via-[#df4cd4] to-[#ff2e83] px-10 py-10 text-lg font-bold text-white  transition-all hover:scale-105 group-hover:rotate-12 "
-                  style={{"padding": "5px"}}>
+                  style={{"padding": "5px","margin-top": "10px"}}>
                   <Instagram size={22} className="transition-transform duration-300 hover:rotate-12 " />
                   Follow on Instagram
                 </a>
@@ -613,7 +613,7 @@ export default function Home() {
 
                     <div className="border-t border-[#efe6df] px-4 py-3.5 sm:px-5">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-1 text-[#111827]">
+                        <div className="flex items-center gap-1 text-[#111827]" style={{"margin-left":"10px","margin-top":"10px" }}>
                           <button
                             type="button"
                             aria-label="Like reel"

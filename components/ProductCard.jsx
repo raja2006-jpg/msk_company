@@ -59,7 +59,7 @@ export default function ProductCard({ product }) {
                         className="w-full bg-[var(--primary)] text-white text-[13.5px] font-bold py-[13px] px-4 rounded-[5px] flex items-center justify-center gap-2.5 transition-transform hover:bg-[var(--primary-light)] active:scale-[0.98]"
                     style={{"padding":"9px"}}>
                         <MessageCircle size={15} fill="currentColor" />
-                        Buy Now
+                        Order on WhatsApp
                     </a>
                     
                     {/* Outlined Custom Details Button */}
