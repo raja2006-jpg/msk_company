@@ -64,32 +64,34 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative mt-24 pb-4 sm:mt-28 sm:pb-6 md:mt-32 md:pb-8" style={{"marginBottom":"-20px",
-                                                                                      "marginTop":"150px"
-    }}>
-      <div className="px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12">
-        <div className="relative mx-auto w-full overflow-hidden rounded-[32px] border border-[rgba(173,195,221,0.75)] bg-[linear-gradient(180deg,#edf5ff_0%,#eef6ff_100%)] shadow-[0_26px_68px_rgba(18,35,63,0.12)] md:rounded-[40px]">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(102, 169, 247, 0.51),transparent_42%),radial-gradient(circle_at_22%_76%,rgba(197, 225, 255, 0.88),transparent_50%),radial-gradient(circle_at_82%_38%,rgba(165, 206, 253, 0.6),transparent_30%)]" />
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-[linear-gradient(180deg,rgba(238, 234, 137, 0.4)_0%,rgba(255,255,255,0)_100%)]" />
+    <footer className="footer-wrapper">
+      <div className="footer-outer-padding">
+        <div className="footer-card">
+          {/* Gradient overlays */}
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(102,169,247,0.51),transparent_42%),radial-gradient(circle_at_22%_76%,rgba(197,225,255,0.88),transparent_50%),radial-gradient(circle_at_82%_38%,rgba(165,206,253,0.6),transparent_30%)]" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-[linear-gradient(180deg,rgba(238,234,137,0.4)_0%,rgba(255,255,255,0)_100%)]" />
 
-          <div className="relative grid gap-10 px-5 py-8 sm:px-7 sm:py-10 md:gap-12 md:px-10 md:py-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-16 lg:px-14 lg:py-16 xl:px-16 xl:py-[4.5rem] 2xl:px-20">
-            <div className="max-w-[32rem] lg:max-w-[36rem] xl:max-w-[40rem]">
-              <h2
-                className={`${headingFont.className} text-[clamp(1.2rem,3.5vw,5.4rem)] font-[800] leading-[0.94] tracking-[-0.06em] text-[#4b5667] `}
-              style={{"marginLeft":"25px","marginBottom":"-10px"}}>
+          {/* Main content grid */}
+          <div className="footer-content">
+            {/* Left column: Tagline */}
+            <div className="footer-tagline-col">
+              <h2 className={`${headingFont.className} footer-tagline`}>
                 Premium Products,
+                <br className="hidden sm:inline" />
                 Affordable Price
               </h2>
             </div>
 
-            <div className="lg:justify-self-end"style={{"marginRight":"45px","marginTop":"15px"}}>
-              <div className="mx-auto max-w-[34rem] lg:mx-0 lg:max-w-[38rem] xl:max-w-[42rem]">
-                <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+            {/* Right column: Logo + Socials */}
+            <div className="footer-brand-col">
+              <div className="footer-brand-inner">
+                {/* Logo + Brand name */}
+                <div className="footer-brand-row">
                   <Link
                     href="/"
-                    className="group relative flex h-[7.25rem] w-[7.25rem] shrink-0 items-center justify-center rounded-full border border-white/90 bg-white/72 shadow-[0_16px_30px_rgba(18,35,63,0.08)] backdrop-blur-sm"
+                    className="footer-logo-circle"
                   >
-                    <div className="relative h-[6.2rem] w-[6.2rem]">
+                    <div className="footer-logo-img">
                       <Image
                         src={siteContent.logoSrc}
                         alt={`${siteContent.companyName} logo`}
@@ -101,20 +103,17 @@ export default function Footer() {
                   </Link>
 
                   <div className="min-w-0">
-                    <p
-                      className={`${brandFont.className} text-[clamp(2.9rem,4vw,4.7rem)] font-[800] italic leading-[0.9] tracking-[-0.08em] text-[var(--primary)]`}
-                    style={{"marginRight":"30px","marginTop":"15px"}}>
+                    <p className={`${brandFont.className} footer-brand-name`}>
                       {siteContent.shortName} Marketing
                     </p>
-                    <p
-                      className={`${brandFont.className} mt-1 pl-1 text-[0.86rem] font-[600] uppercase tracking-[0.52em] text-[#5b6a7f]`}
-                    >
+                    <p className={`${brandFont.className} footer-brand-sub`}>
                       Company
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-8 flex flex-wrap gap-5">
+                {/* Social icons */}
+                <div className="footer-socials">
                   {footerSocials.map((social) => {
                     const Icon = social.icon;
 
@@ -125,10 +124,10 @@ export default function Footer() {
                         target={social.href.startsWith("http") ? "_blank" : undefined}
                         rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         aria-label={social.label}
-                        className={`group inline-flex h-14 w-14 items-center justify-center rounded-[14px] ring-1 ring-white/75 transition-all duration-200 hover: hover:scale-[1.02] ${social.wrapClass}`}
-                      style={{"margin":"30px","marginTop":"15px"}}>
+                        className={`group footer-social-icon ${social.wrapClass}`}
+                      >
                         <Icon
-                          size={30}
+                          size={26}
                           className={`transition-transform duration-200 group-hover:scale-110 ${social.iconClass}`}
                         />
                       </a>
@@ -139,13 +138,347 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="relative mx-5 border-t border-[rgba(91,106,127,0.24)] px-0 py-5 sm:mx-7 sm:py-6 md:mx-10 md:py-7 lg:mx-14 xl:mx-16 2xl:mx-20">
-            <p className="text-center text-[0.97rem] leading-7 text-[#7f8ca1]">
+          {/* Copyright bar */}
+          <div className="footer-copyright-bar">
+            <p className="footer-copyright-text">
               Copyright {currentYear} {siteContent.companyName}. All rights reserved.
             </p>
           </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        /* ─── Footer Base ─── */
+        .footer-wrapper {
+          position: relative;
+          margin-top: 80px;
+          padding-bottom: 16px;
+          margin-bottom: -20px;
+        }
+
+        .footer-outer-padding {
+          padding: 0 12px;
+        }
+
+        .footer-card {
+          position: relative;
+          margin: 0 auto;
+          width: 100%;
+          overflow: hidden;
+          border-radius: 28px;
+          border: 1px solid rgba(173, 195, 221, 0.75);
+          background: linear-gradient(180deg, #edf5ff 0%, #eef6ff 100%);
+          box-shadow: 0 26px 68px rgba(18, 35, 63, 0.12);
+        }
+
+        /* ─── Content Grid ─── */
+        .footer-content {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 24px;
+          padding: 32px 20px;
+        }
+
+        /* ─── Tagline ─── */
+        .footer-tagline-col {
+          width: 100%;
+        }
+
+        .footer-tagline {
+          font-size: clamp(1.5rem, 5vw, 2.2rem);
+          font-weight: 800;
+          line-height: 1.1;
+          letter-spacing: -0.04em;
+          color: #4b5667;
+        }
+
+        /* ─── Brand Column ─── */
+        .footer-brand-col {
+          width: 100%;
+        }
+
+        .footer-brand-inner {
+          max-width: 100%;
+        }
+
+        .footer-brand-row {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .footer-logo-circle {
+          position: relative;
+          display: flex;
+          height: 5.5rem;
+          width: 5.5rem;
+          flex-shrink: 0;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.9);
+          background: rgba(255, 255, 255, 0.72);
+          box-shadow: 0 16px 30px rgba(18, 35, 63, 0.08);
+          backdrop-filter: blur(4px);
+        }
+
+        .footer-logo-img {
+          position: relative;
+          height: 4.6rem;
+          width: 4.6rem;
+        }
+
+        .footer-brand-name {
+          font-size: clamp(1.6rem, 5vw, 2.8rem);
+          font-weight: 800;
+          font-style: italic;
+          line-height: 0.95;
+          letter-spacing: -0.06em;
+          color: var(--primary);
+          text-align: center;
+        }
+
+        .footer-brand-sub {
+          margin-top: 4px;
+          padding-left: 2px;
+          font-size: 0.78rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.42em;
+          color: #5b6a7f;
+          text-align: center;
+        }
+
+        /* ─── Social Icons ─── */
+        .footer-socials {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 16px;
+          margin-top: 24px;
+        }
+
+        .footer-social-icon {
+          display: inline-flex;
+          height: 48px;
+          width: 48px;
+          align-items: center;
+          justify-content: center;
+          border-radius: 14px;
+          ring: 1px solid rgba(255, 255, 255, 0.75);
+          transition: all 0.2s;
+        }
+
+        .footer-social-icon:hover {
+          transform: scale(1.05);
+        }
+
+        /* ─── Copyright ─── */
+        .footer-copyright-bar {
+          position: relative;
+          margin: 0 20px;
+          border-top: 1px solid rgba(91, 106, 127, 0.24);
+          padding: 16px 0;
+        }
+
+        .footer-copyright-text {
+          text-align: center;
+          font-size: 0.85rem;
+          line-height: 1.6;
+          color: #7f8ca1;
+        }
+
+        /* ════════════════════════════════
+           TABLET (640px+)
+           ════════════════════════════════ */
+        @media (min-width: 640px) {
+          .footer-wrapper {
+            margin-top: 100px;
+            padding-bottom: 20px;
+          }
+
+          .footer-outer-padding {
+            padding: 0 16px;
+          }
+
+          .footer-card {
+            border-radius: 32px;
+          }
+
+          .footer-content {
+            gap: 32px;
+            padding: 40px 28px;
+          }
+
+          .footer-brand-row {
+            flex-direction: row;
+            gap: 16px;
+          }
+
+          .footer-brand-name {
+            text-align: left;
+          }
+
+          .footer-brand-sub {
+            text-align: left;
+          }
+
+          .footer-copyright-bar {
+            margin: 0 28px;
+            padding: 20px 0;
+          }
+
+          .footer-copyright-text {
+            font-size: 0.9rem;
+          }
+        }
+
+        /* ════════════════════════════════
+           MEDIUM (768px+)
+           ════════════════════════════════ */
+        @media (min-width: 768px) {
+          .footer-card {
+            border-radius: 36px;
+          }
+
+          .footer-content {
+            gap: 40px;
+            padding: 48px 40px;
+          }
+
+          .footer-logo-circle {
+            height: 6.5rem;
+            width: 6.5rem;
+          }
+
+          .footer-logo-img {
+            height: 5.5rem;
+            width: 5.5rem;
+          }
+
+          .footer-brand-name {
+            font-size: clamp(2rem, 4vw, 3rem);
+          }
+
+          .footer-copyright-bar {
+            margin: 0 40px;
+            padding: 24px 0;
+          }
+        }
+
+        /* ════════════════════════════════
+           DESKTOP (1024px+)
+           ════════════════════════════════ */
+        @media (min-width: 1024px) {
+          .footer-wrapper {
+            margin-top: 130px;
+            padding-bottom: 24px;
+          }
+
+          .footer-outer-padding {
+            padding: 0 24px;
+          }
+
+          .footer-card {
+            border-radius: 40px;
+          }
+
+          .footer-content {
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            gap: 48px;
+            padding: 56px 56px;
+          }
+
+          .footer-tagline-col {
+            width: auto;
+            flex: 1;
+          }
+
+          .footer-tagline {
+            font-size: clamp(2rem, 3.5vw, 3.4rem);
+            margin-left: 20px;
+          }
+
+          .footer-brand-col {
+            width: auto;
+          }
+
+          .footer-brand-inner {
+            margin-left: auto;
+          }
+
+          .footer-brand-row {
+            flex-direction: row;
+            gap: 20px;
+          }
+
+          .footer-brand-name {
+            text-align: left;
+            font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+          }
+
+          .footer-brand-sub {
+            text-align: left;
+          }
+
+          .footer-logo-circle {
+            height: 7.25rem;
+            width: 7.25rem;
+          }
+
+          .footer-logo-img {
+            height: 6.2rem;
+            width: 6.2rem;
+          }
+
+          .footer-socials {
+            gap: 20px;
+            margin-top: 28px;
+            justify-content: flex-start;
+          }
+
+          .footer-social-icon {
+            height: 56px;
+            width: 56px;
+          }
+
+          .footer-copyright-bar {
+            margin: 0 56px;
+            padding: 24px 0;
+          }
+
+          .footer-copyright-text {
+            font-size: 0.97rem;
+          }
+        }
+
+        /* ════════════════════════════════
+           LARGE DESKTOP (1280px+)
+           ════════════════════════════════ */
+        @media (min-width: 1280px) {
+          .footer-outer-padding {
+            padding: 0 40px;
+          }
+
+          .footer-content {
+            padding: 64px 64px;
+          }
+
+          .footer-socials {
+            gap: 24px;
+          }
+
+          .footer-copyright-bar {
+            margin: 0 64px;
+          }
+        }
+      `}</style>
     </footer>
   );
 }
