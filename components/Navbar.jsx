@@ -33,13 +33,12 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-400 ${
-          isScrolled
-            ? "bg-white/65 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.06)] backdrop-blur-[10px]"
-            : "bg-white/60 py-4 backdrop-blur-[10px]"
-        }`}
-      style={{ "padding": "10px 10px"}}>
-        <div className="container-custom flex items-center justify-between px-4 md:px-0 lg:px-6">
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-400 ${isScrolled
+            ? "bg-white/65 py-2 md:py-3 shadow-[0_4px_30px_rgba(0,0,0,0.06)] backdrop-blur-[10px]"
+            : "bg-white/60 py-4 md:py-4 backdrop-blur-[10px]"
+          }`}
+      >
+        <div className="container-custom !py-3 md:!py-4 flex items-center justify-between px-4 md:px-4 lg:px-6">
           <BrandLockup href="/" size="sm" priority />
 
           {/* Center Links (Trendy Threads style) */}
@@ -51,11 +50,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative text-[15px] font-semibold tracking-wide transition-colors duration-200 ${
-                    isActive
+                  className={`relative text-[15px] font-semibold tracking-wide transition-colors duration-200 ${isActive
                       ? "text-[var(--primary)] drop-shadow-sm"
                       : "text-[var(--text-secondary)] hover:text-[var(--primary)]"
-                  }`}
+                    }`}
                 >
                   {link.label}
                   {isActive ? (
@@ -75,7 +73,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               className="group flex items-center gap-2 rounded-[10px] bg-[var(--primary)] px-6 py-2.5 text-[15px] font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--primary-dark)] hover:shadow-lg"
-            style={{width: "auto", height: "auto","padding":'10px 10px'}}>
+              style={{ width: "auto", height: "auto", "padding": '10px 10px' }}>
               <MessageCircle size={18} strokeWidth={2.5} />
               Contact Us
             </Link>
@@ -85,8 +83,8 @@ export default function Navbar() {
             onClick={() => setIsMobileOpen((open) => !open)}
             className="inline-flex  p-2.5 text-[var(--primary)] transition-colors  md:hidden"
             aria-label="Toggle menu"
-           
-           >
+
+          >
             {isMobileOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
         </div>
@@ -102,7 +100,7 @@ export default function Navbar() {
             className="fixed right-3 top-[70px] z-50 w-[150px]  md:hidden"
             style={{ transformOrigin: "top right" }}
           >
-            <div className="overflow-hidden rounded-[16px] border border-[var(--border)] bg-[white]/20 p-2 shadow-[0_8px_30px_rgba(138,33,50,0.12)] backdrop-blur-md">
+            <div className="overflow-hidden rounded-[10px] border border-[var(--border)] bg-[white]/20 p-2 shadow-[0_8px_30px_rgba(138,33,50,0.12)] backdrop-blur-md">
               <div className="flex flex-col">
                 {navLinks.map((link, index) => (
                   <motion.div
@@ -114,12 +112,12 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={closeMobileMenu}
-                      className="group flex w-full items-center justify-between  px-4 py-3 text-[15px] transition-colors hover:bg-[var(--primary)]/30 "
-                      style={{ color: "var(--primary)","padding":"10px 10px","fontWeight":"800","hover:text-color":"white/90" }}
+                      className="group flex w-full items-center justify-between px-4 py-3 text-[15px] transition-colors hover:bg-[var(--primary)]/100 text-[var(--primary)] hover:text-white/90"
+                      style={{ "padding":"10px 10px","fontWeight":"800" }}
                     >
                       <span className="font-bold tracking-wide">{link.label}</span>
                       <span className="text-[15px] opacity-100 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                        ↗ 
+                        ↗
                       </span>
                     </Link>
                   </motion.div>

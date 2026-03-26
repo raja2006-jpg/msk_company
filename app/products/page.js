@@ -97,7 +97,7 @@ const CustomDropdown = ({
                                         cursor-pointer flex justify-between items-center
                                         text-[var(--primary)]
                                         
-                                        hover:bg-[var(--primary-light)] hover:text-white
+                                        hover:bg-[var(--primary)] hover:text-white
                                         transition-all
                                     "
                                     style={{ "padding": '10px', "margin-left": "5px", "margin-right": "5px", "margin-top": "8px", "margin-bottom": "8px", "border-radius": "8px" }}

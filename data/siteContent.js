@@ -1,7 +1,7 @@
 const mapQuery = "MSK Marketing Company, Main Street, City";
 
 export const siteContent = {
-  logoSrc: "/msk-logo.svg",
+  logoSrc: "/logo.png",
   companyName: "MSK Marketing company",
   shortName: "MSK",
   tagline: "Marketing Company",

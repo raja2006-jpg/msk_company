@@ -267,9 +267,9 @@ export default function Home() {
               transition={{ duration: 1.5, ease: "easeInOut" }}
               className="absolute inset-0"
             >
-              <div 
-                className="absolute inset-0 opacity-80" 
-                style={{ background: activeHero.surfaceGradient }} 
+              <div
+                className="absolute inset-0 opacity-80"
+                style={{ background: activeHero.surfaceGradient }}
               />
               <motion.div
                 initial={{ scale: 1.05 }}
@@ -288,7 +288,7 @@ export default function Home() {
             </motion.div>
           </AnimatePresence>
           {/* Subtle vignette/overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#fffdf7]/40 z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-black/10 to-black/40 z-10 pointer-events-none" />
         </div>
 
         {/* Centered Content */}
@@ -306,7 +306,7 @@ export default function Home() {
               {/* Eyebrow */}
               <motion.div variants={fadeInUp} className="mb-6">
                 <span className="inline-flex items-center gap-2 rounded-[6px] bg-white/10 backdrop-blur-md border border-white/10 px-10 py-5 text-xs md:text-sm font-bold tracking-[0.2em] text-[#eef4fb] uppercase shadow-lg"
-                style={{"padding":"10px 10px"}}>
+                  style={{ "padding": "10px 10px" }}>
                   {(() => {
                     const HeroIcon = activeHero.icon;
                     return <HeroIcon size={16} />;
@@ -316,7 +316,7 @@ export default function Home() {
               </motion.div>
 
               {/* Title */}
-              <motion.h1 
+              <motion.h1
                 variants={fadeInUp}
                 className="text-[clamp(2.5rem,8vw,6rem)] font-black leading-[1.05] tracking-[-0.03em] text-white drop-shadow-2xl mb-6"
               >
@@ -328,7 +328,7 @@ export default function Home() {
               </motion.h1>
 
               {/* Description */}
-              <motion.p 
+              <motion.p
                 variants={fadeInUp}
                 className="mt-2 max-w-2xl text-[clamp(1.05rem,2.5vw,1.25rem)] leading-relaxed text-[#dbe5f0] drop-shadow-md font-medium"
               >
@@ -340,7 +340,7 @@ export default function Home() {
                 <Link
                   href="/products"
                   className="group flex items-center gap-5 rounded-full bg-white/95 backdrop-blur-md pl-8 pr-2 py-2 text-base md:text-lg font-bold tracking-wide text-[var(--primary)] transition-all duration-300 hover:bg-white hover:text-[var(--primary-dark)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.25)] hover:-translate-y-1"
-                style={{"paddingLeft":"20px","border":"4px solid var(--border-strong)","borderRadius":"50px","marginTop":"20px"}}>
+                  style={{ "paddingLeft": "20px", "border": "4px solid var(--border-strong)", "borderRadius": "50px", "marginTop": "20px" }}>
                   <span>Explore now</span>
                   <div className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-white shadow-md transition-all duration-400 hover:rotate-45"
                   >
@@ -355,15 +355,15 @@ export default function Home() {
         {/* Scroll Indicator */}
         <div className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-3 opacity-75">
           <span className="text-[#dbe5f0] text-[10px] font-bold uppercase tracking-[0.3em]">Scroll</span>
-          <motion.div 
-            animate={{ y: [0, 8, 0] }} 
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             className="w-[2px] h-10 bg-gradient-to-b from-white/80 to-transparent rounded-full"
           />
         </div>
       </section>
 
-    
+
 
       <section className="section-padding relative overflow-hidden bg-[#fffdf7]">
         <div className="absolute inset-0 pointer-events-none">
@@ -386,12 +386,12 @@ export default function Home() {
               className="mb-12 flex flex-col items-center gap-4 text-center"
             >
               <div className="flex flex-col items-center">
-                
+
                 <h2 className="section-title">
                   Our Best <span className="gradient-text">Sellers</span>
                 </h2>
               </div>
-                <Link
+              <Link
                 href="/products"
                 className="group flex items-center gap-2 font-semibold text-[var(--primary)] transition-all hover:gap-3 mb-4 mt-2 "
               >
@@ -400,14 +400,14 @@ export default function Home() {
                   size={16}
                   className="transition-transform group-hover:translate-x-2"
                 />
-              </Link> 
-             
-            </motion.div>
-            
-          </AnimatedSection>
-         
+              </Link>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
+            </motion.div>
+
+          </AnimatedSection>
+
+
+          <div className="grid gap-8 px-[50px] sm:px-0 sm:grid-cols-2 lg:grid-cols-3 max-lg:ml-20 max-md:ml-10 ">
             {featuredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
@@ -426,17 +426,17 @@ export default function Home() {
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/22 to-black/12 transition-all duration-500 group-hover:from-black/84 group-hover:via-black/38 group-hover:to-black/18" />
-                     <div className="absolute left-5 top-5 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/29 text-white backdrop-blur-md transition-all duration-900 transform group-hover:rotate-20">
+                      <div className="absolute left-5 top-5 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/29 text-white backdrop-blur-md transition-all duration-900 transform group-hover:rotate-20">
                         {(() => {
                           const CardIcon = bestSellerIcons[product.category] ?? Star;
-                          return <CardIcon size={23} strokeWidth={2} />;  
+                          return <CardIcon size={23} strokeWidth={2} />;
                         })()}
                       </div>
 
                       <div className="absolute inset-x-0 bottom-0 z-10 p-5 sm:p-6 items-center">
                         <div className="translate-y-7 transition-transform duration-500 group-hover:translate-y-0">
                           <div className="pr-14">
-                           
+
                             <h3 className="text-[1.9rem] font-extrabold leading-none tracking-[-0.04em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] text-center transition-all duration-300 group-hover:text-center">
                               {product.name}
                             </h3>
@@ -448,14 +448,14 @@ export default function Home() {
                             </p>
                           </div>
 
-                         
+
                         </div>
                       </div>
 
-                     
+
                     </div>
                   </div>
-               </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -490,15 +490,15 @@ export default function Home() {
           />
         </div>
 
-        <div className="container-custom relative z-10">
+        <div className="container-custom relative z-10 max-md:text-center">
           <AnimatedSection className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
-            <motion.div variants={fadeInUp} className="max-w-xl">
-              <span className="inline-flex rounded-[5px]   px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--primary)] shadow-[0_12px_24px_rgba(188,144,71,0.08)] backdrop-blur-sm" style={{"margin-left":"10px"}}>
+            <motion.div variants={fadeInUp} className="max-w-xl max-md:mx-auto">
+              <span className="inline-flex rounded-[5px]   px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--primary)] shadow-[0_12px_24px_rgba(188,144,71,0.08)] backdrop-blur-sm " style={{ "margin-left": "10px" }}>
                 Explore From Instagram
               </span>
 
               <h2
-                className={`font-bold mt-8 max-w-lg text-[clamp(2.75rem,5vw,4.5rem)] leading-[1.32] text-[var(--text-primary)] ${instagramHeadingFont.className}`}
+                className={`font-bold mt-8 max-w-lg max-md:mx-auto text-[clamp(2.75rem,5vw,4.5rem)] leading-[1.32] text-[var(--text-primary)] ${instagramHeadingFont.className}`}
               >
                 Watch Our Latest Updates
                 <br />
@@ -506,24 +506,24 @@ export default function Home() {
               </h2>
 
               <p className="mt-8 max-w-2xl text-[1.1rem] leading-9 text-[var(--text-primary)] font-medium ]">
-                 Follow our page for more featured products, and the newest updates from
+                Follow our page for more featured products, and the newest updates from
                 {` ${siteContent.companyName}.`}
               </p>
 
-              <div className="mt-12">
+              <div className="mt-12 max-md:flex max-md:justify-center">
                 <a
                   href={instagramHref}
                   target={hasInstagramLink ? "_blank" : undefined}
                   rel={hasInstagramLink ? "noopener noreferrer" : undefined}
-                  className="inline-flex items-center gap-3 rounded-[7px] bg-gradient-to-r from-[#9d35ff] via-[#df4cd4] to-[#ff2e83] px-10 py-10 text-lg font-bold text-white  transition-all hover:scale-105 group-hover:rotate-12 "
-                  style={{"padding": "5px","margin-top": "10px"}}>
-                  <Instagram size={22} className="transition-transform duration-300 hover:rotate-12 " />
+                  className="inline-flex items-center gap-3 rounded-[10px] bg-gradient-to-r from-[#9d35ff] via-[#df4cd4] to-[#ff2e83] px-10 py-5 text-lg font-bold text-white  transition-all hover:scale-105 group-hover:rotate-90 "
+                  style={{ "padding": "10px", "margin-top": "20px" }}>
+                  <Instagram size={40} className="transition-transform duration-300 hover:rotate-12 " />
                   Follow on Instagram
                 </a>
               </div>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="relative mx-auto w-full max-w-[400px] max-h-[590px] mt-8 lg:mt-0">
+            <motion.div variants={fadeInUp} className="relative mx-auto w-full max-w-[400px] max-h-[590px] mt-8 lg:mt-0 max-lg:justify-self-center">
               <div className="absolute -inset-8 rounded-[40px] bg-[radial-gradient(circle_at_top,_rgba(214,165,71,0.18),_transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(170,114,255,0.24),_transparent_34%)] blur-3xl" />
 
               <div className="relative rounded-[30px] border border-white/75 bg-white/55 p-4 shadow-[0_36px_80px_rgba(139,87,55,0.16)] backdrop-blur-md transition-all duration-500 hover:shadow-[0_48px_120px_rgba(139,87,55,0.24)]">
@@ -555,9 +555,10 @@ export default function Home() {
                       target={hasInstagramLink ? "_blank" : undefined}
                       rel={hasInstagramLink ? "noopener noreferrer" : undefined}
                       className="mr-3 inline-flex shrink-0 items-center justify-center rounded-[5px] bg-[#0095f6] px-4 py-2 text-sm font-semibold leading-none text-white transition-all duration-200 hover:bg-[#1877f2] "
-                    style={{"padding": "5px", "fontSize": "0.8rem","marginRight": "8.5px"
-                             
-                    }}>
+                      style={{
+                        "padding": "5px", "fontSize": "0.8rem", "marginRight": "8.5px"
+
+                      }}>
                       Follow Us
                     </a>
                   </div>
@@ -565,16 +566,16 @@ export default function Home() {
                   <div className="relative aspect-[8/9] overflow-hidden bg-black">
                     <video
                       ref={instagramVideoRef}
-                      
+
                       loop
-                      
+
                       playsInline
                       preload="metadata"
                       onLoadedData={handleInstagramVideoReady}
                       onPause={() => setIsInstagramVideoPlaying(false)}
                       onPlay={() => setIsInstagramVideoPlaying(true)}
-                      
-                      
+
+
                       className="h-full w-full object-cover"
                     >
                       <source src="/videos/instagram-placeholder.mp4" type="video/mp4" />
@@ -594,7 +595,7 @@ export default function Home() {
                     </button>
 
                     <div className="absolute inset-x-0 bottom-7 px-6 text-center">
-                     
+
                       <p className="mt-2 text-sm font-medium text-white/82">
                         {isInstagramVideoPlaying ? "Tap to pause the reel" : "Tap to play the reel"}
                       </p>
@@ -613,7 +614,7 @@ export default function Home() {
 
                     <div className="border-t border-[#efe6df] px-4 py-3.5 sm:px-5">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-1 text-[#111827]" style={{"margin-left":"10px","margin-top":"10px" }}>
+                        <div className="flex items-center gap-1 text-[#111827]" style={{ "margin-left": "10px", "margin-top": "10px" }}>
                           <button
                             type="button"
                             aria-label="Like reel"
@@ -633,7 +634,7 @@ export default function Home() {
                             <MessageCircle
                               size={22}
                               strokeWidth={2.1}
-                              className="  hover:scale-110 hover:text-[var(--demo)]" 
+                              className="  hover:scale-110 hover:text-[var(--demo)]"
                             />
                           </button>
                           <button
@@ -662,7 +663,7 @@ export default function Home() {
                         </button>
                       </div>
 
-                      
+
                     </div>
                   </div>
                 </div>
@@ -680,6 +681,7 @@ export default function Home() {
               "radial-gradient(circle, rgba(79, 134, 198, 0.18) 1.15px, transparent 1.15px)",
             backgroundSize: "28px 28px",
             backgroundPosition: "10px 12px",
+
           }}
         />
         <div className="pointer-events-none absolute left-[8%] top-[-4rem] h-40 w-40 rounded-full bg-[rgba(79,134,198,0.12)] blur-3xl" />
@@ -694,12 +696,12 @@ export default function Home() {
                 <motion.div
                   key={stat.label}
                   variants={fadeInUp}
-                  className="mx-auto flex min-h-[250px] w-full max-w-[252px] flex-col items-center justify-center rounded-[24px] border border-[rgba(191,208,227,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.97)_50%,rgba(242,247,252,0.97)_100%)] px-7 py-8 text-center shadow-[0_20px_44px_rgba(18,35,63,0.08)] ring-1 ring-white/75 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_58px_rgba(18,35,63,0.12)]"
+                  className="justify-self-center sm:justify-self-auto flex min-h-[250px] w-full max-w-[300px] flex-col items-center justify-center rounded-[24px] border border-[rgba(191,208,227,0.92)] bg-[linear-gradient(180deg,rgba(255,255,255,0.97)_50%,rgba(242,247,252,0.97)_100%)] px-7 py-8 text-center shadow-[0_20px_44px_rgba(18,35,63,0.08)] ring-1 ring-white/75 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_58px_rgba(18,35,63,0.12)]"
                 >
                   <div
                     className={`mx-auto mb-7 flex h-[78px] w-[78px] items-center justify-center rounded-full border border-white/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] ${stat.iconWrapClass}`}
                   >
-                    <StatIcon size={32} strokeWidth={2.1} className={stat.iconClass} />
+                    <StatIcon size={35} strokeWidth={2.1} className={stat.iconClass} />
                   </div>
                   <p className="text-[3.05rem] font-extrabold leading-none tracking-[-0.04em] text-[var(--primary)]">
                     {stat.value}
@@ -714,7 +716,7 @@ export default function Home() {
         </div>
       </section>
 
-     
+
 
       <Footer />
     </>

@@ -89,17 +89,15 @@ export default function Footer() {
                 <div className="footer-brand-row">
                   <Link
                     href="/"
-                    className="footer-logo-circle"
+                    className="relative shrink-0 transition-transform duration-300 hover:scale-[1.03]"
                   >
-                    <div className="footer-logo-img">
-                      <Image
-                        src={siteContent.logoSrc}
-                        alt={`${siteContent.companyName} logo`}
-                        fill
-                        sizes="100px"
-                        className="object-contain transition-transform duration-300 group-hover:scale-[1.03]"
-                      />
-                    </div>
+                    <Image
+                      src={siteContent.logoSrc}
+                      alt={`${siteContent.companyName} logo`}
+                      width={160}
+                      height={160}
+                      className="h-[85px] w-[85px] rounded-full border-[3px] border-white object-cover shadow-md md:h-[110px] md:w-[110px]"
+                    />
                   </Link>
 
                   <div className="min-w-0">
@@ -154,6 +152,8 @@ export default function Footer() {
           margin-top: 80px;
           padding-bottom: 16px;
           margin-bottom: -20px;
+          padding-bottom:0px;
+          padding-top:0px;
         }
 
         .footer-outer-padding {
