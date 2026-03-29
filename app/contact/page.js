@@ -415,7 +415,7 @@ export default function ContactPage() {
                     style={{ transition: "transform 0.50s ease" }}
                   />
                 </button>
-               
+
               </div>
             </form>
           </motion.div>

@@ -102,7 +102,7 @@ function AnimatedSection({ children, className = "" }) {
 export default function Home() {
   const instagramVideoRef = useRef(null);
   const [activeHeroIndex, setActiveHeroIndex] = useState(0);
-  const [isInstagramVideoPlaying, setIsInstagramVideoPlaying] = useState(true);
+  const [isInstagramVideoPlaying, setIsInstagramVideoPlaying] = useState(false);
   const featuredProducts = [
     products.find((product) => product.category === "Electronics"),
     products.find((product) => product.category === "Furniture"),
@@ -206,19 +206,8 @@ export default function Home() {
   const hasInstagramLink = instagramHref !== "#";
   const instagramHandle = `${siteContent.shortName.toLowerCase()}_marketingco`;
 
-  const handleInstagramVideoReady = async () => {
-    const video = instagramVideoRef.current;
-
-    if (!video) {
-      return;
-    }
-
-    try {
-      await video.play();
-      setIsInstagramVideoPlaying(true);
-    } catch {
-      setIsInstagramVideoPlaying(false);
-    }
+  const handleInstagramVideoReady = () => {
+    setIsInstagramVideoPlaying(false);
   };
 
   const toggleInstagramVideoPlayback = async () => {
@@ -291,65 +280,95 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-black/10 to-black/40 z-10 pointer-events-none" />
         </div>
 
+        {/* home page gloozy containor*/}
+         <div className="flex flex-col items-center max-w-4xl mx-auto w-full">
+            {/* 2. Fixed State Eyebrow */}
+            <div className="mb-6">
+              <span className="inline-flex items-center gap-2 rounded-[6px] bg-white/10 backdrop-blur-md border border-white/10 px-10 py-5 text-xs md:text-sm font-bold tracking-[0.2em] text-[#eef4fb] uppercase shadow-lg"
+                style={{ "padding": "10px 10px", "margin-top": "10px"}}>
+                {(() => {
+                  const HeroIcon = activeHero.icon;
+                  return <HeroIcon size={16} />;
+                })()}
+                {activeHero.eyebrow}
+              </span>
+            </div>
         {/* Centered Content */}
-        <div className="container-custom relative z-20 w-full px-4 sm:px-6 flex flex-col items-center text-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`content-${activeHero.key}`}
-              initial="hidden"
-              animate="visible"
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.3 }}
-              variants={stagger}
-              className="flex flex-col items-center max-w-4xl mx-auto"
-            >
-              {/* Eyebrow */}
-              <motion.div variants={fadeInUp} className="mb-6">
-                <span className="inline-flex items-center gap-2 rounded-[6px] bg-white/10 backdrop-blur-md border border-white/10 px-10 py-5 text-xs md:text-sm font-bold tracking-[0.2em] text-[#eef4fb] uppercase shadow-lg"
-                  style={{ "padding": "10px 10px" }}>
-                  {(() => {
-                    const HeroIcon = activeHero.icon;
-                    return <HeroIcon size={16} />;
-                  })()}
-                  {activeHero.eyebrow}
-                </span>
-              </motion.div>
+        <div className="container-custom relative z-20 w-full px-4 sm:px-6 flex flex-col items-center text-center mt-4">
+          
+          {/* 1. gen.jpg at the top (Mobile Only) */}
+          <div className="md:hidden flex justify-center w-full relative z-30 mb-8 mt-6">
+            <Image
+              src="/gen.png"
+              alt="GEN+"
+              width={320}
+              height={100}
+              className="object-contain drop-shadow-2xl"
+              priority
+            />
+          </div>
 
-              {/* Title */}
-              <motion.h1
-                variants={fadeInUp}
-                className="text-[clamp(2.5rem,8vw,6rem)] font-black leading-[1.05] tracking-[-0.03em] text-white drop-shadow-2xl mb-6"
-              >
-                <span className="block text-white/95">Buy your perfect</span>
-                <span className="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-white to-[#a8c6e8]">
-                  {activeHero.title}
-                </span>
-                <span className="block mt-1 text-white/95">Interiors</span>
-              </motion.h1>
+         
 
-              {/* Description */}
-              <motion.p
-                variants={fadeInUp}
-                className="mt-2 max-w-2xl text-[clamp(1.05rem,2.5vw,1.25rem)] leading-relaxed text-[#dbe5f0] drop-shadow-md font-medium"
-              >
-                {activeHero.description}
-              </motion.p>
-
-              {/* CTA Button */}
-              <motion.div variants={fadeInUp} className="mt-10 mb-8 lg:mb-0">
-                <Link
-                  href="/products"
-                  className="group flex items-center gap-5 rounded-full bg-white/95 backdrop-blur-md pl-8 pr-2 py-2 text-base md:text-lg font-bold tracking-wide text-[var(--primary)] transition-all duration-300 hover:bg-white hover:text-[var(--primary-dark)] hover:shadow-[0_12px_40px_rgba(255,255,255,0.25)] hover:-translate-y-1"
-                  style={{ "paddingLeft": "20px", "border": "4px solid var(--border-strong)", "borderRadius": "50px", "marginTop": "20px" }}>
-                  <span>Explore now</span>
-                  <div className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-white shadow-md transition-all duration-400 hover:rotate-45"
+            {/* 3. Title - Only the core word animates */}
+            <h1 className="text-[clamp(2.5rem,8vw,6rem)] font-black leading-[1.05] tracking-[-0.03em] text-white drop-shadow-2xl mb-6 flex flex-col items-center w-full">
+              <span className="block text-white/95">Buy your perfect</span>
+              
+              <span className="block mt-1 relative h-[1.3em] w-full flex justify-center overflow-visible">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`title-${activeHero.key}`}
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -25 }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                    className="absolute text-transparent bg-clip-text bg-gradient-to-r from-white to-[#a8c6e8] whitespace-nowrap"
                   >
-                    <ArrowRight size={25} width={30} height={30} className="transition-transform duration-300 group-hover:translate-x-1 " />
+                    {activeHero.title}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+              
+              
+            </h1>
+
+            {/* 4. Description - No animation, fixed area */}
+            <p className="mt-2 max-w-2xl w-full text-[clamp(1.05rem,2.5vw,1.25rem)] leading-relaxed text-[#dbe5f0] drop-shadow-md font-medium min-h-[5rem] flex items-start justify-center">
+              {activeHero.description}
+            </p>
+
+            {/* 5. Marquee - On top of the Enquire btn */}
+            <div className="mt-4 mb-2 md:hidden w-full overflow-hidden relative z-30 py-3 backdrop-blur-md border-none" style={{ "padding": "10px 10px" }}>
+              <motion.div
+                animate={{ x: [0, "-10%"] }}
+                transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+                className="flex w-max items-center"
+              >
+                {[...products, ...products, ...products].map((product, index) => (
+                  <div key={`${product.id}-${index}`} className="flex items-center">
+                    <span className="text-[#eef4fb] text-sm md:text-base font-bold tracking-widest uppercase px-6 whitespace-nowrap drop-shadow-md">
+                      {product.name}
+                    </span>
+                    <span className="text-white/20">___</span>
                   </div>
-                </Link>
+                ))}
               </motion.div>
-            </motion.div>
-          </AnimatePresence>
+            </div>
+
+            {/* 6. Enquire Btn (Explore Now) */}
+            <div className="mt-4 mb-8 lg:mb-0 flex flex-col items-center">
+              <Link
+                href="/products"
+                className="group flex items-center gap-5 rounded-full bg-white/95 backdrop-blur-md pl-8 pr-2 py-2 text-base md:text-lg font-bold tracking-wide text-[var(--primary)] transition-all duration-300 hover:bg-white hover:text-[var(--primary-dark)] hover:-translate-y-1"
+                style={{ "paddingLeft": "20px", "border": "4px solid var(--border-strong)", "borderRadius": "50px", "marginTop": "20px" }}>
+                <span>Explore now</span>
+                <div className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-full bg-[var(--primary)] text-white shadow-md transition-all duration-400 hover:rotate-45"
+                style={{"padding":"7px"}}>
+                  <ArrowRight size={25} width={30} height={30} className="transition-transform duration-300 group-hover:translate-x-1 " />
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
@@ -461,7 +480,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="section-padding relative overflow-hidden bg-[#fbf60ee]">
+      <section className="section-padding relative overflow-hidden bg-[tan]/[0.13]">
         <div className="absolute inset-0">
           <div className="absolute left-[-8%] top-10 h-80 w-80 rounded-full bg-[#fff40d7] blur-3xl" />
           <div className="absolute right-[-4%] top-8 h-[26rem] w-[26rem] rounded-full bg-[#eed90ff]/60 blur-3xl" />
@@ -485,7 +504,7 @@ export default function Home() {
             className="absolute inset-0 opacity-[0.18]"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 14% 18%, rgba(13, 27, 50, 0.53), transparent 28%), radial-gradient(circle at 82% 16%, rgba(196, 213, 255, 0.15), transparent 26%), radial-gradient(circle at 50% 88%, rgba(255,228,239,0.8), transparent 22%)",
+                "radial-gradient(circle at 14% 18%, rgba(149, 13, 239, 0.68), transparent 22%), radial-gradient(circle at 82% 16%, rgba(196, 213, 255, 0.15), transparent 2%), radial-gradient(circle at 50% 88%, rgba(255, 190, 216, 0.8), transparent 2%)",
             }}
           />
         </div>
